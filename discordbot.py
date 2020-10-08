@@ -23,6 +23,14 @@ async def test(ctx):
     await ctx.send('Niwa Bot は正常に稼働中！\nTime:['+now_str+']')
 
 @bot.command()
+async def google (ctx):
+    keyw = msg.text.replace("google ", "")
+    QS =  urllib.parse.quote(keyw)                     
+    Search = 'https://www.google.com/search?q=' + QS
+    await ctx.send("[" + keyw + " のGoogle検索結果]\n" + Search)              
+
+    
+@bot.command()
 async def ping(ctx):
     await ctx.send('pong')
 
