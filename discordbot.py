@@ -19,7 +19,8 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def test(ctx):
     now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
-    await ctx.send('Niwa Bot は正常に稼働中！\nTime:['+now+']')
+    now_str = now.strftime('%Y/%m/%d %H:%M:%S')
+    await ctx.send('Niwa Bot は正常に稼働中！\nTime:['+now_str+']')
 
 @bot.command()
 async def ping(ctx):
