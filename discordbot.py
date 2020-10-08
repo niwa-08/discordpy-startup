@@ -24,7 +24,7 @@ async def test(ctx):
 
 @bot.command()
 async def google (ctx):
-    keyw = msg.text.replace("google ", "")
+    keyw = message.text.replace("google ", "")
     QS =  urllib.parse.quote(keyw)                     
     Search = 'https://www.google.com/search?q=' + QS
     await ctx.send("[" + keyw + " のGoogle検索結果]\n" + Search)              
